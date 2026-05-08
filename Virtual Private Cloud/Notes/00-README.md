@@ -17,6 +17,10 @@ These notes are made from a 9-video tutorial series on AWS VPC. Every concept, e
 | 7 | Accessing EC2 Instances in Private Subnets (EC2 Instance Connect Endpoint, Bastion Host) | [07-Accessing-Private-Subnet-EC2.md](07-Accessing-Private-Subnet-EC2.md) |
 | 8 | NAT Gateway – Outbound Internet for Private Subnets | [08-NAT-Gateway.md](08-NAT-Gateway.md) |
 | 9 | VPC Summary – All Components Cheat Sheet | [09-VPC-Summary.md](09-VPC-Summary.md) |
+| 10 | VPC Peering Connection | [10-VPC-Peering.md](10-VPC-Peering.md) |
+| 11 | Network ACL (NACL) | [11-Network-ACL.md](11-Network-ACL.md) |
+| 12 | Network ACL vs Security Group – Key Differences | [12-NACL-vs-Security-Group.md](12-NACL-vs-Security-Group.md) |
+| 13 | Stateful vs Stateless Firewalls | [13-Stateful-vs-Stateless-Firewalls.md](13-Stateful-vs-Stateless-Firewalls.md) |
 
 ---
 
@@ -54,3 +58,8 @@ Step 5: Configure Route Table
 | Private Subnet | A subnet WITHOUT a route to the Internet Gateway |
 | NAT Gateway | Provides only **outbound** internet to private subnets |
 | Bastion Host | A jump server in the public subnet used to SSH into private instances |
+| VPC Peering | Private connection between two VPCs (any region/account) using private IPs |
+| Network ACL (NACL) | Stateless firewall that protects the entire **subnet**; supports allow + deny rules |
+| Security Group | Stateful firewall that protects a specific **EC2/ENI**; allow rules only |
+| Stateful firewall | Remembers connection state — return traffic auto-allowed (Security Group) |
+| Stateless firewall | Each direction needs an explicit rule (Network ACL) |
